@@ -1,0 +1,233 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{11}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Chan, Wu, Talbot, Cammarano, and
+  Hanrahan}{Chan et~al\mbox{.}}{[n.d.]}]%
+        {chan2008}
+\bibfield{author}{\bibinfo{person}{Bryan Chan}, \bibinfo{person}{Leslie Wu},
+  \bibinfo{person}{Justin Talbot}, \bibinfo{person}{Mike Cammarano}, {and}
+  \bibinfo{person}{Pat Hanrahan}.} \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{Vispedia: {{Interactive Visual Exploration}} of
+  {{Wikipedia Data}} via {{Search}}-{{Based Integration}}}.
+\newblock  \bibinfo{volume}{14}, \bibinfo{number}{6}
+  (\bibinfo{year}{[n.\,d.]}), \bibinfo{pages}{1213--1220}.
+\newblock
+\showISSN{1941-0506}
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TVCG.2008.178}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chasins, Mueller, and Bodik}{Chasins
+  et~al\mbox{.}}{[n.d.]}]%
+        {chasins2018}
+\bibfield{author}{\bibinfo{person}{Sarah~E. Chasins}, \bibinfo{person}{Maria
+  Mueller}, {and} \bibinfo{person}{Rastislav Bodik}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{Rousillon: {{Scraping Distributed Hierarchical Web
+  Data}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 31st {{Annual ACM
+  Symposium}} on {{User Interface Software}} and {{Technology}}}} ({Berlin
+  Germany}, 2018-10-11). \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{963--975}.
+\newblock
+\showISBNx{978-1-4503-5948-1}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3242587.3242661}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kushmerick}{Kushmerick}{[n.d.]}]%
+        {kushmerick2000}
+\bibfield{author}{\bibinfo{person}{Nicholas Kushmerick}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{Wrapper Induction: {{Efficiency}} and
+  Expressiveness}.
+\newblock  \bibinfo{volume}{118}, \bibinfo{number}{1-2}
+  (\bibinfo{year}{[n.\,d.]}), \bibinfo{pages}{15--68}.
+\newblock
+\showISSN{00043702}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/S0004-3702(99)00100-9}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Le and Gulwani}{Le and Gulwani}{[n.d.]}]%
+        {le2014}
+\bibfield{author}{\bibinfo{person}{Vu Le} {and} \bibinfo{person}{Sumit
+  Gulwani}.} \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{{{FlashExtract}}: A Framework for Data Extraction
+  by Examples}. In \bibinfo{booktitle}{\emph{Proceedings of the 35th {{ACM
+  SIGPLAN Conference}} on {{Programming Language Design}} and
+  {{Implementation}}}} ({Edinburgh United Kingdom}, 2014-06-09).
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{542--553}.
+\newblock
+\showISBNx{978-1-4503-2784-8}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2594291.2594333}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lin, Wong, Nichols, Cypher, and Lau}{Lin
+  et~al\mbox{.}}{[n.d.]}]%
+        {lin2009}
+\bibfield{author}{\bibinfo{person}{James Lin}, \bibinfo{person}{Jeffrey Wong},
+  \bibinfo{person}{Jeffrey Nichols}, \bibinfo{person}{Allen Cypher}, {and}
+  \bibinfo{person}{Tessa~A. Lau}.} \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{End-User Programming of Mashups with Vegemite}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 14th International Conference on
+  {{Intelligent}} User Interfaces}} ({Sanibel Island Florida USA}, 2009-02-08).
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{97--106}.
+\newblock
+\showISBNx{978-1-60558-168-2}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1502650.1502667}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Litt, Jackson, Millis, and Quaye}{Litt
+  et~al\mbox{.}}{[n.d.]}]%
+        {litt2020}
+\bibfield{author}{\bibinfo{person}{Geoffrey Litt}, \bibinfo{person}{Daniel
+  Jackson}, \bibinfo{person}{Tyler Millis}, {and} \bibinfo{person}{Jessica
+  Quaye}.} \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{End-User Software Customization by Direct
+  Manipulation of Tabular Data}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2020 {{ACM SIGPLAN International Symposium}} on {{New Ideas}}, {{New
+  Paradigms}}, and {{Reflections}} on {{Programming}} and {{Software}}}}
+  ({Virtual USA}, 2020-11-18). \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{18--33}.
+\newblock
+\showISBNx{978-1-4503-8178-9}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3426428.3426914}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Satyanarayan, Moritz, Wongsuphasawat, and
+  Heer}{Satyanarayan et~al\mbox{.}}{[n.d.]}]%
+        {satyanarayan2017}
+\bibfield{author}{\bibinfo{person}{Arvind Satyanarayan},
+  \bibinfo{person}{Dominik Moritz}, \bibinfo{person}{Kanit Wongsuphasawat},
+  {and} \bibinfo{person}{Jeffrey Heer}.} \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{Vega-{{Lite}}: {{A Grammar}} of {{Interactive
+  Graphics}}}.
+\newblock  \bibinfo{volume}{23}, \bibinfo{number}{1}
+  (\bibinfo{year}{[n.\,d.]}), \bibinfo{pages}{341--350}.
+\newblock
+\showISSN{1941-0506}
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TVCG.2016.2599030}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Toomim, Drucker, Dontcheva, Rahimi, Thomson,
+  and Landay}{Toomim et~al\mbox{.}}{[n.d.]}]%
+        {toomim2009}
+\bibfield{author}{\bibinfo{person}{Michael Toomim}, \bibinfo{person}{Steven~M.
+  Drucker}, \bibinfo{person}{Mira Dontcheva}, \bibinfo{person}{Ali Rahimi},
+  \bibinfo{person}{Blake Thomson}, {and} \bibinfo{person}{James~A. Landay}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{Attaching {{UI}} Enhancements to Websites with End
+  Users}. In \bibinfo{booktitle}{\emph{Proceedings of the 27th International
+  Conference on {{Human}} Factors in Computing Systems - {{CHI}} 09}} ({Boston,
+  MA, USA}, 2009). \bibinfo{publisher}{{ACM Press}}, \bibinfo{pages}{1859}.
+\newblock
+\showISBNx{978-1-60558-246-7}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1518701.1518987}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Wongsuphasawat, Moritz, Anand, Mackinlay,
+  Howe, and Heer}{Wongsuphasawat et~al\mbox{.}}{[n.d.]a}]%
+        {wongsuphasawat2016}
+\bibfield{author}{\bibinfo{person}{Kanit Wongsuphasawat},
+  \bibinfo{person}{Dominik Moritz}, \bibinfo{person}{Anushka Anand},
+  \bibinfo{person}{Jock Mackinlay}, \bibinfo{person}{Bill Howe}, {and}
+  \bibinfo{person}{Jeffrey Heer}.} \bibinfo{year}{[n.d.]}\natexlab{a}.
+\newblock \showarticletitle{Towards a General-Purpose Query Language for
+  Visualization Recommendation}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the {{Workshop}} on {{Human}}-{{In}}-the-{{Loop Data Analytics}} - {{HILDA}}
+  '16}} ({San Francisco, California}, 2016). \bibinfo{publisher}{{ACM Press}},
+  \bibinfo{pages}{1--6}.
+\newblock
+\showISBNx{978-1-4503-4207-0}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2939502.2939506}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Wongsuphasawat, Qu, Moritz, Chang, Ouk, Anand,
+  Mackinlay, Howe, and Heer}{Wongsuphasawat et~al\mbox{.}}{[n.d.]b}]%
+        {wongsuphasawat2017}
+\bibfield{author}{\bibinfo{person}{Kanit Wongsuphasawat},
+  \bibinfo{person}{Zening Qu}, \bibinfo{person}{Dominik Moritz},
+  \bibinfo{person}{Riley Chang}, \bibinfo{person}{Felix Ouk},
+  \bibinfo{person}{Anushka Anand}, \bibinfo{person}{Jock Mackinlay},
+  \bibinfo{person}{Bill Howe}, {and} \bibinfo{person}{Jeffrey Heer}.}
+  \bibinfo{year}{[n.d.]}\natexlab{b}.
+\newblock \showarticletitle{Voyager 2: {{Augmenting Visual Analysis}} with
+  {{Partial View Specifications}}}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2017 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}}}
+  ({Denver Colorado USA}, 2017-05-02). \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{2648--2659}.
+\newblock
+\showISBNx{978-1-4503-4655-9}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3025453.3025768}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zhang and Guo}{Zhang and Guo}{[n.d.]}]%
+        {zhang2017}
+\bibfield{author}{\bibinfo{person}{Xiong Zhang} {and}
+  \bibinfo{person}{Philip~J. Guo}.} \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{{{DS}}.Js: {{Turn Any Webpage}} into an
+  {{Example}}-{{Centric Live Programming Environment}} for {{Learning Data
+  Science}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 30th {{Annual ACM
+  Symposium}} on {{User Interface Software}} and {{Technology}}}} ({Québec
+  City QC Canada}, 2017-10-20). \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{691--702}.
+\newblock
+\showISBNx{978-1-4503-4981-9}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3126594.3126663}
+\showDOI{\tempurl}
+
+
+\end{thebibliography}
