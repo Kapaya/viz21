@@ -78,36 +78,29 @@
 
 %% Paper title.
 
-\title{Web Voyager: Lightweight Exploration Of Semi-Structured Website Data}
+\title{Web Voyager: Lightweight Exploration Of Structured Website Data}
 
 %% This is how authors are specified in the conference style
 
 %% Author and Affiliation (multiple authors with single affiliations).
 \author{Kapaya Katongo\thanks{e-mail: kkatongo@mit.edu}
 \and Geoffrey Litt\thanks{e-mail: glitt@mit.edu}
-\and Daniel Jackson\thanks{e-mail: dnj@csail.mit.edu}}
+\and Daniel Jackson\thanks{e-mail: dnj@mit.edu}}
 \affiliation{\scriptsize MIT CSAIL}
 
 %% Abstract section.
 \abstract{
- Websites are awash with semi-structured data that is ripe for exploration but there are two significant barriers to this: accessing the data and visualizing it. Accessing the data requires web scraping because the data is often not available in a portable format such as JSON or CSV or is only available behind an API which requires programming expertise to use. Visualizing the data requires knowledge of visualization specification formats or languages.
+ Websites are awash with structured data that is ripe for exploration but there are two significant barriers to this: accessing the data and visualizing it.
+ Accessing the data requires web scraping because the data is often not available in a suitable format (such as JSON or CSV) or is only available behind an API
+ which requires programming expertise to use. Visualizing the data requires knowledge of visualization specification formats or languages.
 
- In this paper, we present an interaction model for lightweight exploration of semi-structured website data that does not require knowledge of web scraping or data visualization formats and languages. Our key idea is to combine web scraping via programming-by-demonstration with visualization recommendation: users scrape data from a website via mouse clicks and get visualization recommendations based on the scraped data. Unlike existing solutions, our web scraping approach supports accessing a wide variety of semi-structured website data and our visualization approach is neither limited to predefined visualizations nor does it require knowledge of data visualization.
+ In this paper, we present an interaction model for lightweight exploration of structured website data that enables instant creation of data visualizations with
+ just a few mouse clicks. Our key idea is to combine web scraping via programming-by-demonstration with visualization recommendation: users scrape data from a website
+ via mouse clicks and get visualization recommendations based on the scraped data. Unlike existing solutions, a) our web scraping approach is not limited to structured
+ website data in HTML tables and, b) our visualization approach is not limited to visualizations that require a predefined data schema.
 
  To illustrate the proposed model, we have implemented a Chrome browser extension called Web Voyager. Through case studies, we show how our model can be used to explore data on real-world websites in order to characterize the capabilities and limitations of the approach.
 } % end of abstract
-
-%% ACM Computing Classification System (CCS). 
-%% See <http://www.acm.org/about/class> for details.
-%% We recommend the 2012 system <http://www.acm.org/about/class/class/2012>
-%% For the 2012 system use the ``\CCScatTwelve'' which command takes four arguments.
-%% The 1998 system <http://www.acm.org/about/class/class/2012> is still possible
-%% For the 1998 system use the ``\CCScat'' which command takes four arguments.
-%% In both cases the last two arguments (1998) or last three (2012) can be empty.
-
-\CCScatlist{
-  \CCScatTwelve{Human-centered computing}{Visu\-al\-iza\-tion}{Visu\-al\-iza\-tion systems and tools};
-}
 
 %% Copyright space is enabled by default as required by guidelines.
 %% It is disabled by the 'review' option or via the following command:
@@ -129,26 +122,52 @@
 \maketitle
 
 %% \section{Introduction} %for journal use above \firstsection{..} instead
-Many websites provide valuable semi-structured data that users would like to process and visualize. This data ranges from job postings on websites like LinkedIn to user reviews on websites like Yelp. To explore data through visualization, it must be in a format suitable for computation. Most website data is either not available in a portable format (such as JSON or CSV) or is only available via an Application Programming Interface (API) which requires programming expertise to use. Even with the data in hand, visualizing it requires knowledge of data visualization formats and languages. 
+Many websites provide valuable structured data that users would like to process and visualize. This data ranges from job postings
+on websites like LinkedIn to 10-day weather forecasts on websites like The Weather Channel. To explore data through visualization, it must be in a format
+suitable for computation. Most website data is either not available in a portable format (such as JSON or CSV) or is only available
+via an Application Programming Interface (API) which requires programming expertise to use. Even with the data in hand,
+visualizing it requires knowledge of data visualization formats and languages.
 
-Prior research has resulted in tools like Vispedia \cite{chan2008}, Reform \cite{toomim2009} and DS.js \cite{zhang2017} which have developed solutions to overcome some of these barriers. Vispedia automatically accesses website data via web scraping and allows users to visualize it using a predefined list of visualizations, but it only works on Wikipedia. Reform allows users to scrape a site via programming-by-demonstration (PBD) and then feed it into a predefined visualization widget created by a programmer. While the visualization widgets are not restricted to any given website, they require the exact data prescribed by their authors. This means that in order to visualize data on a website, a programmer must have created a visualization widget that accepts that type of data. DS.js comes closest to breaking down the two barriers. It automatically accesses website data via web scraping and provides a programming environment to analyze and visualize the scraped data. However, only website data in HTML table elements can be accessed, which does not cover the wide variety of semi-structured data available on many websites. Furthermore, users require knowledge of programming and data visualization in order to use the provided programming environment to explore the data.
+Prior research has resulted in tools like Vispedia \cite{chan2008}, Reform \cite{toomim2009} and DS.js \cite{zhang2017} which have
+developed solutions to overcome some of these barriers. Vispedia automatically accesses website data via web scraping and allows users
+to visualize it using a predefined list of visualizations, but it only works on Wikipedia. Reform allows users to scrape data from websites via
+programming-by-demonstration (PBD) and then feed it into a predefined visualization widget created by a programmer. While the visualization
+widgets are not restricted to any given website, they require the data to adhere to a predefined schema. This means that in order to visualize
+data on a website, a programmer must have created a visualization widget that accepts that type of data. DS.js comes closest to
+breaking down the two barriers. It automatically accesses website data via web scraping and provides a programming environment
+to analyze and visualize the scraped data. However, only website data in HTML table elements can be accessed, which does not
+cover the wide variety of structured data available on many websites. Furthermore, users require knowledge of programming
+and data visualization in order to use the provided programming environment to explore the data.
 
-In this paper, we present an interaction model for lightweight exploration of semi-structured website data right in the context of the website. Our key idea is to combine web scraping via PBD with visualization recommendation: users scrape data from a website via mouse clicks and get visualization recommendations based on the scraped data. No knowledge of web scraping or data visualization specification formats and languages is required. Unlike existing solutions, our web scraping approach supports accessing a wide variety of semi-structured website data and our visualization approach is neither limited to predefined visualizations nor does it require knowledge of data visualization.
+In this paper, we present an interaction model for lightweight exploration of structured website data that enables instant creation
+of data visualizations with just a few mouse clicks. Our key idea is to combine web scraping via PBD with visualization recommendation:
+users scrape data from a website via mouse clicks and get visualization recommendations based on the scraped data. Unlike existing solutions,
+a) our web scraping approach is not limited to structured website data in HTML tables and, b) our visualization approach is not limited to
+visualizations that require a predefined data schema.
 
 \begin{figure*}
   \includegraphics[width=\textwidth]{figures/example}
-  \caption{\label{fig:example}An overview of exploring job data on LinkedIn using Web Voyager. A) Data field section, B) Visualization section, C) Scraped job title values, D) Job title data field input and checkbox, E) First visualization recommendation based on job title and job location, F) Second visualization recommendation based on job title and job location}
+  \caption{\label{fig:example}An overview of exploring job data on LinkedIn using Web Voyager. A) Data field section,
+  B) Visualization section, C) Scraped job title values, D) Job title data field input and checkbox, E) First visualization
+  recommendation based on job title and job location, F) Second visualization recommendation based on job title and job location}
   \label{fig:example}
 \end{figure*}
 
-To illustrate this approach, we implemented a Chrome browser extension called Web Voyager. Web Voyager combines the PBD web scraping techniques we developed for Wildcard \cite{litt2020} to access website data with CompassQL \cite{wongsuphasawat2016}, the query language for visualization recommendation that powers Voyager 2 \cite{wongsuphasawat2017} (the inspiration for our tool’s name). Our contributions are as follows:
+To illustrate this approach, we implemented a Chrome browser extension called Web Voyager. Web Voyager combines the PBD web scraping
+techniques we developed for Wildcard \cite{litt2020} with CompassQL \cite{wongsuphasawat2016}, the query language for visualization
+recommendation that powers Voyager 2 \cite{wongsuphasawat2017} (the inspiration for our tool’s name). Our contributions are as follows:
 
 \begin{itemize}
- \item An interaction model for lightweight exploration of semi-structured website data via PBD web scraping and visualization recommendation, and
+ \item An interaction model for lightweight exploration of structured website data via PBD web scraping and visualization recommendation, and
  \item An implementation of the proposed interaction model via a Chrome browser extension.
 \end{itemize}
 
-Section \ref{demo} describes a concrete scenario that shows how our model can be used to explore data on a real world website. In Section \ref{implementation}, we outline the implementation of the web scraping approach and our use of CompassQL to recommend visualizations based on the scraped data. To characterize the capabilities and limitations of our model, we present a suite of case studies on real world websites in Section \ref{evaluation}]. In Section \ref{related-work}, we relate our approach to existing work in PDB web scraping and data visualization. Finally, Section \ref{conclusion} discusses opportunities for future work such as giving users more control over the visualization process.
+Section \ref{demo} describes a concrete scenario that shows how our model can be used to explore data on a real-world website.
+In Section \ref{implementation}, we outline the implementation of the web scraping approach and our use of CompassQL to recommend
+visualizations based on the scraped data. To characterize the capabilities and limitations of our model, we present a suite of
+case studies on real world websites in Section \ref{evaluation}. In Section \ref{related-work}, we relate our approach to existing
+work in PDB web scraping and data visualization. Finally, Section \ref{conclusion} discusses opportunities for future work such
+as enabling data transformations and manual visualization specification.
 
 \section{Example Scenario} \label{demo}
 
@@ -161,22 +180,24 @@ motivation to learn them. Using Web Voyager,Jen can explore the data in the cont
 She starts out by initiating Web Voyager through the browser context menu. This renders a panel with two sections: one for the data fields
 that will represent the data that will be scraped (Figure \ref{fig:example} A) and one for the visualization recommendations (Figure \ref{fig:example} B).
 As she hovers over one of the job title values, Web Voyager highlights the job titles across all the jobs which gives her feedback about what values will
-be scraped (Figure \ref{fig:example} C). She clicks on the value to scrape all the job titles and Web Voyager adds a checkbox-activated field with the default
-label \emph{A} to the data section. Because this is the first field to be scraped, it is automatically checked and results in the recommendation of a visualization
-based on the job title data. The recommendation is a univariate visualization with job titles on the y-axis and a count of each job title in the data on the x-axis.
+be scraped (Figure \ref{fig:example} C). She clicks on the value to scrape all the job titles and Web Voyager adds a data field entry (Figure \ref{fig:example} D). 
+The entry consists of a checkbox for indicating whether to include the field in the visualization recommendation, an input box to change the name of the field
+from the default value and a dropdown to select the type of the field (\emph{N} for nominal, \emph{Q} for quantitative, \emph{O} or ordinal and \emph{T} for temporal).
+Because this is the first field to be scrapped, it is automatically checked and results in the recommendation of a visualization
+based on the job title values. The recommendation is a univariate visualization with job titles on the y-axis and a count of each job title in the data on the x-axis.
 With this, Jen is able to easily see that the most common job title is "Principal Software Engineer."
 
-Jen proceeds to scrape the job location values, which adds a second field (\emph{B}) to the data section whose checkbox is unchecked. To keep track of which
+Jen proceeds to scrape the job location values, which adds a second data field entry whose checkbox is unchecked. To better keep track of which
 field corresponds to which data values, Jen clicks into the job title data field input, which shows her the corresponding values on the website by highlighting
-them, and changes \emph{A} to \emph{Job Title}. This automatically re-renders the visualization to update the y-axis label from \emph{A} to \emph{Job Title}
-(Figure \ref{fig:example} D). She likewise changes \emph{B} to \emph{Job Location}, and checks its checkbox. This results in the recommendation of two data
+them, and changes the default value (\emph{A}) to \emph{Job Title}. This automatically re-renders the visualization to update the y-axis label from \emph{A} to \emph{Job Title}.
+She likewise changes the job location field from its default value (\emph{B}) to \emph{Job Location}, and checks its checkbox. This results in the recommendation of two data
 visualizations based on both the job title and job location data. The first visualization (Figure \ref{fig:example} E) has job locations on the y-axis and
 job titles on the x-axis, with points sized by the number of jobs at a given location with a given title used as marks. The second visualization
-(Figure \ref{fig:example} F) shows a small-multiples bar chart with the count of jobs of each title in a given city. Jen continues to scrape data
-values and use the data field checkboxes to determine what visualizations will be recommended based on the data corresponding to checked data fields. 
+(Figure \ref{fig:example} F) shows a small-multiples bar chart with the count of jobs of each title in a given city. If desired, Jen can continue 
+to scrape values (such as the company names) and use the data field checkboxes to visualize different combinations of the data.
 
 Using Web Voyager, Jen was able to explore the job data using a few simple clicks without any knowledge of web scraping or data visualization.
-In Section \ref{evaluation}, we present a suite of case studies that show more real-world websites whose semi-structured data can be explored
+In Section \ref{evaluation}, we present a suite of case studies that show more real-world websites whose structured data can be explored
 using our interaction model.
 
 \section{Implementation} \label{implementation}
@@ -187,7 +208,7 @@ This section outlines the implementation of our web scraping and visualization r
 
 When users demonstrate a value to scrape, Web Voyager must synthesize a program that reflects the user’s general intent. This is an instance of the wrapper induction \cite{kushmerick2000} problem of synthesizing a web data extraction query from examples. In the next two sections, we describe the two stages involved in this process.
 
-\subsubsection{Determing Row Elements}
+\subsubsection{Determining Row Elements}
 
 Given a DOM element \(v\) representing a value to scrape, we must find a
 set of a set of \emph{row elements} that represent the rows of the
@@ -221,9 +242,13 @@ wins. Given a winning candidate \((r, s)\), the full set of row elements
 is \(\{r\} \cup siblings(r)\).
 
 \begin{figure*}
-  \includegraphics[width=\textwidth]{figures/example}
-  \caption{\label{fig:example}An overview of exploring job data on LinkedIn using Web Voyager. A) Data field section, B) Visualization section, C) Scraped job title values, D) Job title data field input and checkbox, E) First visualization recommendation based on job title and job location, F) Second visualization recommendation based on job title and job location}
-  \label{fig:example}
+  \includegraphics[width=\textwidth]{figures/gallery}
+  \caption{\label{fig:example}Gallery of websites whose data can be explored with Web Voyager
+  A) US holiday data visualized by category and day of week
+  B) 2000 IEEE VIZ paper visualized by first authors
+  C) 10-day weather forcast visualized by weather description
+  D) 2020 IEEE VIZ short paper previews visualized by video length}
+  \label{fig:gallery}
 \end{figure*}
 
 \subsubsection{Synthesizing CSS Selectors For Column
@@ -315,8 +340,16 @@ approaches.
 \subsection{Case Studies}
 
 We used Web Voyager to explore data on a collection of real world
-websites that we list in Table 1. The websites were chosen to showcase
-the variety of supported semi-structured data available on websites.
+websites that we list in Figure \ref{fig:gallery}. The websites were chosen to showcase
+the variety of supported structured data available on websites:
+
+\begin{itemize}
+ \item \emph{timeanddate.com}: US holiday data is in HTML table
+ \item \emph{virtual.ieeevis.org}: 2020 IEEE paper data is not in HTML table
+ \item \emph{weather.com}: weather forecast data is not in HTML table
+ \item \emph{youtube.com}: 2020 IEEE short paper video data is not in HTML
+\end{itemize}
+
 
 \subsection{Limitations}
 
@@ -345,15 +378,14 @@ might never scrape the entire dataset which limits the effectiveness of the reco
 
 \subsubsection{Data Visualization}
 
-Our visualization recommendation approach is most effective for
-lightweight, open-ended exploration. The features that are useful for
-focused exploration are available in CompassQL but simply haven't been implemented yet.
-Below are the current key limitations:
+Web Voyager's data visualization approach is most effective for
+lightweight, open-ended exploration. However, two key visualization 
+requirements are currently not supported:
 
 \emph{Data Transformations}. Users cannot transform the scraped data values. This limits the range of possible visualizations on
-websites where the data to be explored is not presented in the format required for visualizaiton. For example, Weather.com presents
-temparature values with the degree symbol. While this provides the required context when viewing the temparature values on the website, the
-values cannot be processed as numbers. As a result, the appropriate visualizaitons that rightfully treat temparature as a number cannot be recommended.
+websites where the data to be explored is not presented in the format required for visualization. For example, Weather.com presents
+temperature values with the degree symbol. While this provides the required context when viewing the temperature values on the website, the
+values cannot be processed as numbers. As a result, the appropriate visualizations that rightfully treat temperature as quantitative cannot be recommended.
 This limitation applies to other useful data transformations like filtering.
 
 \emph{Manual Visualization Specification}. Users currently do not have any control over the visualization process
@@ -384,10 +416,12 @@ language for visualization recommendation that powers Voyager 2
 \cite{wongsuphasawat2017}, for its visualization recommendation. The
 current implementation of Web Voyager is more similar to Voyager 1 \cite{wongsuphasawat2016a} than
 Voyager 2 due to its lack of support for manual visualization
-specification. More broadly, Web Voyager relates to tools like Vispedia
+specification.
+
+More broadly, Web Voyager relates to tools like Vispedia
 \cite{chan2008}, Reform \cite{toomim2009} and DS.js \cite{zhang2017}
 that enable visualization of website data. Of the three, DS.js comes the
-closest to enabling lightweight exploration of semi-structured website
+closest to enabling lightweight exploration of structured website
 data.
 
 DS.js' core feature is a programming environment to analyze and explore
@@ -395,26 +429,33 @@ website data right in the context of the website. The data is accessed
 via automatic scraping of HTML tables and CSV links on a website. While
 DS.js provides a more extensive set of features for processing, analyzing and
 visualizing website data, it can only scrape data in HTML tables which
-does not cover the wide variety of semi-structured data on websites.
+does not cover the wide variety of structured data on websites.
 Furthermore, users require knowledge of programming and data visualization in order to use
 the provided programming environment to explore the data.
 
 \section{Conclusion and Future Work} \label{conclusion}
 
-In this paper, we presented an interaction model for lightweight
-exploration of semi-structured website data that does not require
-knowledge of web scraping or data visualization formats and languages.
-Our key idea is to combine web scraping via programming-by-demonstration (to access
+In this paper, we presented an interaction model for lightweight exploration
+of structured website data that enables instant creation of data visualizations with 
+just a few mouse clicks. Our key idea is to combine web scraping via programming-by-demonstration (to access
 website data) with visualization recommendation.
 
-The main area of future work is giving users more control over the
-visualization process. The current implementation emulates the
+The main areas of future work are enabling manual visualization specifications and
+data transformations. The current implementation emulates the
 visualization capabilities of Voyager 1 \cite{wongsuphasawat2016a}:
-users can determine what data to visualize but not how it is visualized.
-While this is desirable for open-ended exploration, it is not sufficient
-for focused exploration. Voyager 2 \cite{wongsuphasawat2017} provides
-some inspiration for combining automatic and manual chart specification
-that we will explore in the next iteration.
+users can determine what data to visualize but not how it is visualized. Voyager 2 
+\cite{wongsuphasawat2017} provides some inspiration for combining automatic
+and manual chart specification that we will explore in the next iteration.
+Furthermore, the inability for users to transform data (such as removing
+the degree symbol from temperature values) limits the range of possible
+visualization recommendations because the values cannot be processed as the
+correct type (quantitative versus nominal in the case of temperature values). Wildcard's
+\cite{litt2020} spreadsheet paradigm, which includes a formula language for performing
+computations on website data, provides some inspiration for enabling lightweight data
+transformations.
+
+Our ultimate goal is to enable anyone that uses the web to be able to explore website data in
+the course of their daily use in a simple and intuitive manner.
 
 %\bibliographystyle{abbrv}
 \bibliographystyle{abbrv-doi}
@@ -424,3 +465,5 @@ that we will explore in the next iteration.
 
 \bibliography{template}
 \end{document}
+
+
