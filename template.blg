@@ -7,6 +7,7 @@ Database file #1: template.bib
 Warning--empty journal in chan2008
 Warning--empty year in chan2008
 Warning--empty year in chasins2018
+Warning--empty year in huynh2006
 Warning--empty journal in kushmerick2000
 Warning--empty year in kushmerick2000
 Warning--empty year in le2014
@@ -20,45 +21,45 @@ Warning--empty journal in wongsuphasawat2016a
 Warning--empty year in wongsuphasawat2016a
 Warning--empty year in wongsuphasawat2017
 Warning--empty year in zhang2017
-You've used 12 entries,
+You've used 13 entries,
             2598 wiz_defined-function locations,
-            676 strings with 7823 characters,
-and the built_in function-call counts, 15508 in all, are:
-= -- 3519
-> -- 300
-< -- 576
-+ -- 686
-- -- 118
-* -- 508
-:= -- 2152
-add.period$ -- 44
-call.type$ -- 12
-change.case$ -- 89
+            683 strings with 8157 characters,
+and the built_in function-call counts, 16695 in all, are:
+= -- 3798
+> -- 318
+< -- 623
++ -- 739
+- -- 125
+* -- 537
+:= -- 2314
+add.period$ -- 48
+call.type$ -- 13
+change.case$ -- 95
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 222
-empty$ -- 433
-format.name$ -- 106
-if$ -- 4202
+cite$ -- 30
+duplicate$ -- 243
+empty$ -- 466
+format.name$ -- 112
+if$ -- 4535
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 12
-newline$ -- 129
-num.names$ -- 24
-pop$ -- 130
+int.to.str$ -- 13
+missing$ -- 13
+newline$ -- 139
+num.names$ -- 26
+pop$ -- 141
 preamble$ -- 1
-purify$ -- 77
+purify$ -- 82
 quote$ -- 0
-skip$ -- 159
+skip$ -- 173
 stack$ -- 0
-substring$ -- 951
-swap$ -- 82
-text.length$ -- 316
+substring$ -- 1009
+swap$ -- 91
+text.length$ -- 342
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 16
-while$ -- 78
-width$ -- 14
-write$ -- 464
-(There were 16 warnings)
+type$ -- 52
+warning$ -- 17
+while$ -- 83
+width$ -- 15
+write$ -- 502
+(There were 17 warnings)

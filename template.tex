@@ -141,7 +141,6 @@ In this paper, we present an interaction model for lightweight exploration of se
   \label{fig:example}
 \end{figure*}
 
-
 To illustrate this approach, we implemented a Chrome browser extension called Web Voyager. Web Voyager combines the PBD web scraping techniques we developed for Wildcard \cite{litt2020} to access website data with CompassQL \cite{wongsuphasawat2016}, the query language for visualization recommendation that powers Voyager 2 \cite{wongsuphasawat2017} (the inspiration for our tool’s name). Our contributions are as follows:
 
 \begin{itemize}
@@ -220,6 +219,12 @@ We then choose the candidate with the highest weight. In case of ties,
 the candidate closer to \(v\) in the tree (i.e., lower in the tree)
 wins. Given a winning candidate \((r, s)\), the full set of row elements
 is \(\{r\} \cup siblings(r)\).
+
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figures/example}
+  \caption{\label{fig:example}An overview of exploring job data on LinkedIn using Web Voyager. A) Data field section, B) Visualization section, C) Scraped job title values, D) Job title data field input and checkbox, E) First visualization recommendation based on job title and job location, F) Second visualization recommendation based on job title and job location}
+  \label{fig:example}
+\end{figure*}
 
 \subsubsection{Synthesizing CSS Selectors For Column
 Values}
@@ -300,16 +305,6 @@ queries with \texttt{groupBy} and \texttt{nest} that group and nest
 visualization specifications by properties such as \texttt{channel} and
 \texttt{field}.
 
-\begin{table*}[]
-\centering
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Website}              & \textbf{Example exploration of semi-structured data}                                        \\ \hline
-\end{tabular}
-\vspace{8pt}
-\caption{Websites with semi-structured data that Web Voyager can be used to explore}
-\end{table*}
-
 \section{Evaluation} \label{evaluation}
 
 In this section, we characterize the capabilities of our interaction
@@ -331,7 +326,7 @@ visualization approaches using real world websites as references.
 \subsubsection{Web Scraping}
 
 Web Voyager' web scraping approach is most effective on websites whose
-data is presented as a collection of similarly-structured HTML elements.
+data is presented in its entirety and as a collection of similarly-structured HTML elements.
 Certain websites, however, have designs that make it difficult to scrape
 data:
 
@@ -341,27 +336,25 @@ elements. Because Web Voyager only chooses a single row selector, when
 scraping by demonstration, it will only select one of the types of rows,
 and elements in the other types of rows will not be scraped.
 
-\emph{Infinite Scroll}. Websites like LinkedIn have an ``infinite scroll'' feature that adds new
-entries to the page when a user scrolls to the bottom. As a result, the
+\emph{Dynamically Loaded Data}. Websites like LinkedIn have an ``infinite scroll'' feature that adds new
+data to the page when a user scrolls to the bottom. As a result, the
 data scraped by Web Voyager will only contain values that were rendered
-when the scraping was performed. This can be remedied by providing a UI for users
-to indicate when data should be re-scraped (such as when the page is scrolled). In general, 
-dynamically loaded data poses a fundanmental challenge to our approach.
+when the scraping was performed. This could be remedied by providing a UI for users
+to indicate when data should be re-scraped (such as when the page is scrolled) but Web Voyager
+might never scrape the entire dataset which limits the effectiveness of the recommended visualizations.
 
 \subsubsection{Data Visualization}
 
 Our visualization recommendation approach is most effective for
-lightweight, open-ended exploration of nominal and quantitative data.
-The features that are useful for focused exploration are available in
-CompassQL but simply haven't been implemented yet. Below are the current
-key limitations:
+lightweight, open-ended exploration. The features that are useful for
+focused exploration are available in CompassQL but simply haven't been implemented yet.
+Below are the current key limitations:
 
-\emph{Data Field Types}. Vega-lite \cite{satyanarayan2017} specifications support four main data field categories: nominal,
-quantitative, temporal and ordinal. The current implementation of Web
-Voyager only designates data fields as either nominal or quantitative.
-The lack of temporal and ordinal field categories therefore limits the
-range of possible visualization recommendations. This can easily be
-remedied with a UI to allow users to update field categories.
+\emph{Data Transformations}. Users cannot transform the scraped data values. This limits the range of possible visualizations on
+websites where the data to be explored is not presented in the format required for visualizaiton. For example, Weather.com presents
+temparature values with the degree symbol. While this provides the required context when viewing the temparature values on the website, the
+values cannot be processed as numbers. As a result, the appropriate visualizaitons that rightfully treat temparature as a number cannot be recommended.
+This limitation applies to other useful data transformations like filtering.
 
 \emph{Manual Visualization Specification}. Users currently do not have any control over the visualization process
 beyond selecting which fields to visualize. This limits the
@@ -382,7 +375,7 @@ Vegemite \cite{lin2009}, a tool for end-user programming of web
 mashups. Like Web Voyager, Vegemite enables end-users to scrape data
 from a website into a tabular format via simple mouse clicks. Similar
 web scraping approaches can be seen in tools like Rousillon
-\cite{chasins2018} and FlashExtract \cite{le2014}.
+\cite{chasins2018}, FlashExtract \cite{le2014} and Sifter \cite{huynh2006}.
 
 \subsection{Data Visualization}
 
@@ -400,10 +393,10 @@ data.
 DS.js' core feature is a programming environment to analyze and explore
 website data right in the context of the website. The data is accessed
 via automatic scraping of HTML tables and CSV links on a website. While
-DS.js provides a more extensive set of features for visualizing website
-data, it can only scrape data in HTML tables which does not cover the
-wide variety of semi-structured data on websites. Furthermore, users
-require knowledge of programming and data visualization in order to use
+DS.js provides a more extensive set of features for processing, analyzing and
+visualizing website data, it can only scrape data in HTML tables which
+does not cover the wide variety of semi-structured data on websites.
+Furthermore, users require knowledge of programming and data visualization in order to use
 the provided programming environment to explore the data.
 
 \section{Conclusion and Future Work} \label{conclusion}
@@ -411,8 +404,8 @@ the provided programming environment to explore the data.
 In this paper, we presented an interaction model for lightweight
 exploration of semi-structured website data that does not require
 knowledge of web scraping or data visualization formats and languages.
-Our key idea is to combine web scraping via programming-by-demonstration
-with visualization recommendation.
+Our key idea is to combine web scraping via programming-by-demonstration (to access
+website data) with visualization recommendation.
 
 The main area of future work is giving users more control over the
 visualization process. The current implementation emulates the

@@ -23,6 +23,19 @@ S.~E. Chasins, M.~Mueller, and R.~Bodik.
 }{.}\hspace{.4pt}3242661}}
 
 
+\bibitem{huynh2006}
+D.~F. Huynh, R.~C. Miller, and D.~R. Karger.
+\newblock Enabling web browsers to augment web sites' filtering and sorting
+  functionalities.
+\newblock In {\em Proceedings of the 19th Annual {{ACM}} Symposium on {{User}}
+  Interface Software and Technology - {{UIST}} '06}, p. 125. {ACM Press}. doi:
+  {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1166253\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1166274}}
+
+
 \bibitem{kushmerick2000}
 N.~Kushmerick.
 \newblock Wrapper induction: {{Efficiency}} and expressiveness.
