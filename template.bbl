@@ -1,0 +1,148 @@
+\begin{thebibliography}{10}
+
+\bibitem{chan2008}
+B.~Chan, L.~Wu, J.~Talbot, M.~Cammarano, and P.~Hanrahan.
+\newblock Vispedia: {{Interactive Visual Exploration}} of {{Wikipedia Data}}
+  via {{Search}}-{{Based Integration}}.
+\newblock 14(6):1213--1220. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2008\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}178}}
+
+
+\bibitem{chasins2018}
+S.~E. Chasins, M.~Mueller, and R.~Bodik.
+\newblock Rousillon: {{Scraping Distributed Hierarchical Web Data}}.
+\newblock In {\em Proceedings of the 31st {{Annual ACM Symposium}} on {{User
+  Interface Software}} and {{Technology}}}, pp. 963--975. {ACM}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3242587\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3242661}}
+
+
+\bibitem{kushmerick2000}
+N.~Kushmerick.
+\newblock Wrapper induction: {{Efficiency}} and expressiveness.
+\newblock 118(1-2):15--68. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1016\discretionary{/}{%
+}{/}S0004\discretionary{%
+}{-}{-}3702\discretionary{%
+}{(}{(}99\discretionary{)}{%
+}{)}00100\discretionary{%
+}{-}{-}9}}
+
+
+\bibitem{le2014}
+V.~Le and S.~Gulwani.
+\newblock {{FlashExtract}}: A framework for data extraction by examples.
+\newblock In {\em Proceedings of the 35th {{ACM SIGPLAN Conference}} on
+  {{Programming Language Design}} and {{Implementation}}}, pp. 542--553. {ACM}.
+  doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2594291\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2594333}}
+
+
+\bibitem{lin2009}
+J.~Lin, J.~Wong, J.~Nichols, A.~Cypher, and T.~A. Lau.
+\newblock End-user programming of mashups with vegemite.
+\newblock In {\em Proceedings of the 14th International Conference on
+  {{Intelligent}} User Interfaces}, pp. 97--106. {ACM}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1502650\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1502667}}
+
+
+\bibitem{litt2020}
+G.~Litt, D.~Jackson, T.~Millis, and J.~Quaye.
+\newblock End-user software customization by direct manipulation of tabular
+  data.
+\newblock In {\em Proceedings of the 2020 {{ACM SIGPLAN International
+  Symposium}} on {{New Ideas}}, {{New Paradigms}}, and {{Reflections}} on
+  {{Programming}} and {{Software}}}, pp. 18--33. {ACM}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3426428\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3426914}}
+
+
+\bibitem{satyanarayan2017}
+A.~Satyanarayan, D.~Moritz, K.~Wongsuphasawat, and J.~Heer.
+\newblock Vega-{{Lite}}: {{A Grammar}} of {{Interactive Graphics}}.
+\newblock 23(1):341--350. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2016\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2599030}}
+
+
+\bibitem{toomim2009}
+M.~Toomim, S.~M. Drucker, M.~Dontcheva, A.~Rahimi, B.~Thomson, and J.~A.
+  Landay.
+\newblock Attaching {{UI}} enhancements to websites with end users.
+\newblock In {\em Proceedings of the 27th International Conference on {{Human}}
+  Factors in Computing Systems - {{CHI}} 09}, p. 1859. {ACM Press}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1518701\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1518987}}
+
+
+\bibitem{wongsuphasawat2016}
+K.~Wongsuphasawat, D.~Moritz, A.~Anand, J.~Mackinlay, B.~Howe, and J.~Heer.
+\newblock Towards a general-purpose query language for visualization
+  recommendation.
+\newblock In {\em Proceedings of the {{Workshop}} on
+  {{Human}}-{{In}}-the-{{Loop Data Analytics}} - {{HILDA}} '16}, pp. 1--6. {ACM
+  Press}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2939502\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2939506}}
+
+
+\bibitem{wongsuphasawat2016a}
+K.~Wongsuphasawat, D.~Moritz, A.~Anand, J.~Mackinlay, B.~Howe, and J.~Heer.
+\newblock Voyager: {{Exploratory Analysis}} via {{Faceted Browsing}} of
+  {{Visualization Recommendations}}.
+\newblock 22(1):649--658. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2015\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2467191}}
+
+
+\bibitem{wongsuphasawat2017}
+K.~Wongsuphasawat, Z.~Qu, D.~Moritz, R.~Chang, F.~Ouk, A.~Anand, J.~Mackinlay,
+  B.~Howe, and J.~Heer.
+\newblock Voyager 2: {{Augmenting Visual Analysis}} with {{Partial View
+  Specifications}}.
+\newblock In {\em Proceedings of the 2017 {{CHI Conference}} on {{Human
+  Factors}} in {{Computing Systems}}}, pp. 2648--2659. {ACM}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3025453\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3025768}}
+
+
+\bibitem{zhang2017}
+X.~Zhang and P.~J. Guo.
+\newblock {{DS}}.js: {{Turn Any Webpage}} into an {{Example}}-{{Centric Live
+  Programming Environment}} for {{Learning Data Science}}.
+\newblock In {\em Proceedings of the 30th {{Annual ACM Symposium}} on {{User
+  Interface Software}} and {{Technology}}}, pp. 691--702. {ACM}. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3126594\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3126663}}
+
+
+\end{thebibliography}

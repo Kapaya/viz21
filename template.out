@@ -1,0 +1,19 @@
+\BOOKMARK [1][]{section.2}{Introduction}{}% 1
+\BOOKMARK [1][]{section.4}{Example Scenario}{}% 2
+\BOOKMARK [1][]{section.5}{Implementation}{}% 3
+\BOOKMARK [2][]{subsection.6}{Web Scraping}{section.5}% 4
+\BOOKMARK [3][-]{subsubsection.7}{Determing Row Elements}{subsection.6}% 5
+\BOOKMARK [3][-]{subsubsection.8}{Synthesizing CSS Selectors For Column Values}{subsection.6}% 6
+\BOOKMARK [2][]{subsection.9}{Visualization Recommendation}{section.5}% 7
+\BOOKMARK [3][-]{subsubsection.10}{Specification}{subsection.9}% 8
+\BOOKMARK [3][-]{subsubsection.11}{Choosing and Ordering}{subsection.9}% 9
+\BOOKMARK [3][-]{subsubsection.12}{Grouping and Nesting}{subsection.9}% 10
+\BOOKMARK [1][]{section.14}{Evaluation}{}% 11
+\BOOKMARK [2][]{subsection.15}{Case Studies}{section.14}% 12
+\BOOKMARK [2][]{subsection.16}{Limitations}{section.14}% 13
+\BOOKMARK [3][-]{subsubsection.17}{Web Scraping}{subsection.16}% 14
+\BOOKMARK [3][-]{subsubsection.18}{Data Visualization}{subsection.16}% 15
+\BOOKMARK [1][]{section.19}{Related Work}{}% 16
+\BOOKMARK [2][]{subsection.20}{End-user Web Scraping}{section.19}% 17
+\BOOKMARK [2][]{subsection.21}{Data Visualization}{section.19}% 18
+\BOOKMARK [1][]{section.22}{Conclusion and Future Work}{}% 19
