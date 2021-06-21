@@ -123,8 +123,8 @@
 
 %% \section{Introduction} %for journal use above \firstsection{..} instead
 Many websites provide valuable structured data that users would like to process and visualize. This data ranges from job postings
-on websites like LinkedIn to 10-day weather forecasts on websites like The Weather Channel. To explore data through visualization, it must be in a format
-suitable for computation. Most website data is either not available in a portable format (such as JSON or CSV) or is only available
+on websites like LinkedIn to weather forecasts on websites like The Weather Channel. To explore data through visualization, it must be in a format
+suitable for computation. Most website data is either not available in a suitable format (such as JSON or CSV) or is only available
 via an Application Programming Interface (API) which requires programming expertise to use. Even with the data in hand,
 visualizing it requires knowledge of data visualization formats and languages.
 
@@ -147,9 +147,15 @@ visualizations that require a predefined data schema.
 
 \begin{figure*}
   \includegraphics[width=\textwidth]{figures/example}
-  \caption{\label{fig:example}An overview of exploring job data on LinkedIn using Web Voyager. A) Data field section,
-  B) Visualization section, C) Scraped job title values, D) Job title data field input and checkbox, E) First visualization
-  recommendation based on job title and job location, F) Second visualization recommendation based on job title and job location}
+  \caption{\label{fig:example}An overview of exploring job data on LinkedIn using Web Voyager. 
+  A) Data field section,
+  B) Visualization section,
+  C) Scraped job title values,
+  D) Job title data field checkbox, input and dropdown,
+  E) Visualization recommendation based on job titles
+  F) Name of job title data field changed from default (A) to \emph{Job Title}
+  G) First visualization recommendation based on job titles and job locations,
+  H) Second visualization recommendation based on job titles and job locations}
   \label{fig:example}
 \end{figure*}
 
@@ -165,7 +171,7 @@ recommendation that powers Voyager 2 \cite{wongsuphasawat2017} (the inspiration 
 Section \ref{demo} describes a concrete scenario that shows how our model can be used to explore data on a real-world website.
 In Section \ref{implementation}, we outline the implementation of the web scraping approach and our use of CompassQL to recommend
 visualizations based on the scraped data. To characterize the capabilities and limitations of our model, we present a suite of
-case studies on real world websites in Section \ref{evaluation}. In Section \ref{related-work}, we relate our approach to existing
+case studies on real-world websites in Section \ref{evaluation}. In Section \ref{related-work}, we relate our approach to existing
 work in PDB web scraping and data visualization. Finally, Section \ref{conclusion} discusses opportunities for future work such
 as enabling data transformations and manual visualization specification.
 
@@ -175,7 +181,7 @@ This section describes an example scenario, illustrated in Figure \ref{fig:examp
 Jen is looking to change jobs and wants to explore a list of job postings on LinkedIn. She is curious about the jobs available, and
 wonders whether there are any trends in job title or job location but unfortunately LinkedIn does not provide access to the data outside
 of the website. Even if it did, Jen does not have any experience with data visualization formats or languages and her curiosity is not enough
-motivation to learn them. Using Web Voyager,Jen can explore the data in the context of the website with a few simple clicks.
+motivation to learn them. Using Web Voyager, Jen can explore the data in the context of the website with a few simple clicks.
 
 She starts out by initiating Web Voyager through the browser context menu. This renders a panel with two sections: one for the data fields
 that will represent the data that will be scraped (Figure \ref{fig:example} A) and one for the visualization recommendations (Figure \ref{fig:example} B).
@@ -184,16 +190,16 @@ be scraped (Figure \ref{fig:example} C). She clicks on the value to scrape all t
 The entry consists of a checkbox for indicating whether to include the field in the visualization recommendation, an input box to change the name of the field
 from the default value and a dropdown to select the type of the field (\emph{N} for nominal, \emph{Q} for quantitative, \emph{O} or ordinal and \emph{T} for temporal).
 Because this is the first field to be scrapped, it is automatically checked and results in the recommendation of a visualization
-based on the job title values. The recommendation is a univariate visualization with job titles on the y-axis and a count of each job title in the data on the x-axis.
+based on the job title values (Figure \ref{fig:example} E). The recommendation is a univariate visualization with job titles on the y-axis and a count of each job title in the data on the x-axis.
 With this, Jen is able to easily see that the most common job title is "Principal Software Engineer."
 
 Jen proceeds to scrape the job location values, which adds a second data field entry whose checkbox is unchecked. To better keep track of which
 field corresponds to which data values, Jen clicks into the job title data field input, which shows her the corresponding values on the website by highlighting
-them, and changes the default value (\emph{A}) to \emph{Job Title}. This automatically re-renders the visualization to update the y-axis label from \emph{A} to \emph{Job Title}.
+them, and changes the default value (\emph{A}) to \emph{Job Title} (Figure \ref{fig:example} F). This automatically re-renders the visualization to update the y-axis label from \emph{A} to \emph{Job Title}.
 She likewise changes the job location field from its default value (\emph{B}) to \emph{Job Location}, and checks its checkbox. This results in the recommendation of two data
-visualizations based on both the job title and job location data. The first visualization (Figure \ref{fig:example} E) has job locations on the y-axis and
-job titles on the x-axis, with points sized by the number of jobs at a given location with a given title used as marks. The second visualization
-(Figure \ref{fig:example} F) shows a small-multiples bar chart with the count of jobs of each title in a given city. If desired, Jen can continue 
+visualizations based on both the job title and job location data. The first visualization (Figure \ref{fig:example} G) has job locations on the y-axis and
+job titles on the x-axis, with points sized by the number of jobs at a given location with a given title. The second visualization
+(Figure \ref{fig:example} H) shows a small-multiples bar chart with the count of jobs of each title in a given city. If desired, Jen can continue 
 to scrape values (such as the company names) and use the data field checkboxes to visualize different combinations of the data.
 
 Using Web Voyager, Jen was able to explore the job data using a few simple clicks without any knowledge of web scraping or data visualization.
@@ -243,11 +249,13 @@ is \(\{r\} \cup siblings(r)\).
 
 \begin{figure*}
   \includegraphics[width=\textwidth]{figures/gallery}
-  \caption{\label{fig:example}Gallery of websites whose data can be explored with Web Voyager
+  \caption{\label{fig:gallery}Gallery of websites whose data can be explored with Web Voyager
   A) US holiday data visualized by category and day of week
-  B) 2000 IEEE VIZ paper visualized by first authors
-  C) 10-day weather forcast visualized by weather description
-  D) 2020 IEEE VIZ short paper previews visualized by video length}
+  B) 2020 IEEE VIZ papers visualized by first authors
+  C) New Orleans attractions visualized by name and rating
+  D) 10-day weather forecast visualized by weather description
+  E) Google Scholar publications visualized by year and number of citations
+  F) 2020 IEEE VIZ short paper previews visualized by video length}
   \label{fig:gallery}
 \end{figure*}
 
@@ -333,28 +341,39 @@ visualization specifications by properties such as \texttt{channel} and
 \section{Evaluation} \label{evaluation}
 
 In this section, we characterize the capabilities of our interaction
-model through a suite of case studies on real world websites. Then, we
+model through a suite of case studies on real-world websites. Then, we
 outline the limitations of our web scraping and data visualization
 approaches.
 
 \subsection{Case Studies}
 
-We used Web Voyager to explore data on a collection of real world
-websites that we list in Figure \ref{fig:gallery}. The websites were chosen to showcase
+We used Web Voyager to explore data on a collection of real-world
+websites that we show as a gallery in Figure \ref{fig:gallery}. The websites were chosen to showcase
 the variety of supported structured data available on websites:
 
-\begin{itemize}
- \item \emph{timeanddate.com}: US holiday data is in HTML table
- \item \emph{virtual.ieeevis.org}: 2020 IEEE paper data is not in HTML table
- \item \emph{weather.com}: weather forecast data is not in HTML table
- \item \emph{youtube.com}: 2020 IEEE short paper video data is not in HTML
-\end{itemize}
+\emph{US Holidays and Observances}. This entry shows US holiday data visualized by the holiday category
+and the day of the week. The first visualization provides a summary of how many holidays of a 
+given category falls on a given day of the week.
 
+\emph{IEEE VIZ}. This entry shows the 2020 IEEE paper data visualized by the first author. The
+visualization provides a count of papers for which an author was the first author.
+
+\emph{Google Travel}. This entry shows New Orleans attraction data visualized by the name and ratings. The
+visualization provides a distribution of attraction ratings by the name.
+
+\emph{The Weather Channel}. This entry shows the 10-day weather forecast data visualized by weather description. The
+visualization provides a count of how many times each weather description occurs.
+
+\emph{Google Scholar}. This entry shows Google Scholar publication data visualized by the publication year and
+number of citations. The visualization provides a distribution of publication citations by the year.
+
+\emph{YouTube}. This entry shows IEEE VIZ short paper previews visualized by the length of the videos. This visualization
+provides a count of the number of videos of each length.
 
 \subsection{Limitations}
 
 In this section, we outline the limitations of our web scraping and data
-visualization approaches using real world websites as references.
+visualization approaches using real-world websites as references.
 
 \subsubsection{Web Scraping}
 
@@ -395,6 +414,11 @@ specifying what encoding channel, mark or facet the desired
 visualization should use. This can be remedied with a UI similar to that
 of Voyager 2 \cite{wongsuphasawat2017} as CompassQL \cite{wongsuphasawat2016} already provides the required functionality.
 
+One thing worth noting about the limitations above is that the visualizations are rendered (by Vega-lite) 
+with a menu that provides an option to view them in Vega Editor (\emph{vega.github.io/editor}). There, the
+Vega-lite specification and scraped data used to render the chart are available for editing to implement 
+data transformations and manual chart specification for users that have the expertise.
+
 \section{Related Work} \label{related-work}
 
 Our work builds on existing research in end-user web scraping and data
@@ -407,7 +431,10 @@ Vegemite \cite{lin2009}, a tool for end-user programming of web
 mashups. Like Web Voyager, Vegemite enables end-users to scrape data
 from a website into a tabular format via simple mouse clicks. Similar
 web scraping approaches can be seen in tools like Rousillon
-\cite{chasins2018}, FlashExtract \cite{le2014} and Sifter \cite{huynh2006}.
+\cite{chasins2018}, FlashExtract \cite{le2014} and Sifter \cite{huynh2006}. FlashExtract
+provides some inspiration for stripping unwanted characters from scraped values: instead
+of scraping via mouse clicks, it supports scraping via mouse selections. This allows users to
+scrape substrings of values and omit characters like the degree symbol in temperature values.
 
 \subsection{Data Visualization}
 
@@ -465,5 +492,6 @@ the course of their daily use in a simple and intuitive manner.
 
 \bibliography{template}
 \end{document}
+
 
 
